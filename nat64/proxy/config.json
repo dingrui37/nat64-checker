@@ -1,0 +1,20 @@
+{
+  "EIPServers":[
+    {
+      "Zone":"Beijing",
+      "Ip":"172.18.182.43",
+      "Port":9001
+    },
+    {
+      "Zone":"Shanghai",
+      "Ip":"172.18.39.187",
+      "Port":9001
+    }
+  ],
+  "IPv6Server":{
+    "Zone":"ipv6-test",
+    "Ip":"106.75.236.198",
+    "Port":50051
+  },
+  "Interval":60
+}

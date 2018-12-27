@@ -1,0 +1,25 @@
+syntax = "proto3";
+package uver;
+option go_package = "proto";
+
+service NAT64Service {
+    rpc GetNAT64 (GetNAT64Request) returns (GetNAT64Response);
+}
+
+message NAT64 {
+    uint32 account = 1;
+    string id      = 2;
+    string eipv4   = 3;
+    string eipv6   = 4;
+    bool   enabled = 5;
+}
+
+message GetNAT64Request {
+    repeated string ids = 1; // 若未传入eip_id, 则返回所有外网IPv6信息
+}
+
+message GetNAT64Response {
+    int32  retcode = 1; // 0表示成功，其他表示失败
+    string message = 2;
+    map<string, NAT64> nat64s = 3; // key为传入的eip_id, value为NAT64 struct
+}

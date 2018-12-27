@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "nat64.proto";
+package uver;
+option go_package = "proto";
+
+service ProxyService {
+    rpc SetNAT64(SetNAT64Request) returns (SetNAT64Response);
+}
+
+message SetNAT64Response {}
+message SetNAT64Request {
+    uver.GetNAT64Response request = 1;
+    string zone = 2;
+}
